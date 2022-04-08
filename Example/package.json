@@ -11,13 +11,16 @@
     "test": "jest",
     "test:windows": "yarn jest --setupFiles=./jest-setups/jest.setup.windows.js",
     "lint": "eslint .",
-    "postinstall": "node ../scripts/examples_postinstall.js"
+    "postinstall": "node ../scripts/examples_postinstall.js",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-config": "../",
-    "react-native-windows": "^0.62.0-0"
+    "react-native-windows": "^0.62.0-0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -34,5 +37,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "snyk": true
 }
